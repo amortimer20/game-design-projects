@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Texture2D" path="res://assets/background.png" id="1_bg"]
-[ext_resource type="Texture2D" path="res://crate/crate.png" id="2_crate"]
+[ext_resource type="Texture2D" path="res://assets/stone-block.png" id="2_stone"]
+[ext_resource type="Texture2D" path="res://crate/crate.png" id="3_crate"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1280, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crate"]
+size = Vector2(70, 70)
 
 [node name="Main" type="Node2D"]
 
@@ -10,26 +17,41 @@ position = Vector2(640, 360)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_bg")
 
-[node name="Crate" type="Sprite2D" parent="."]
-position = Vector2(300, 300)
-texture = ExtResource("2_crate")
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(640, 660)
 
-[node name="CrateTilted" type="Sprite2D" parent="."]
-position = Vector2(470, 300)
-rotation = 0.261799
-texture = ExtResource("2_crate")
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+scale = Vector2(9.15, 0.58)
+texture = ExtResource("2_stone")
 
-[node name="CrateTurned" type="Sprite2D" parent="."]
-position = Vector2(640, 300)
-rotation = 0.785398
-texture = ExtResource("2_crate")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_ground")
 
-[node name="CrateBig" type="Sprite2D" parent="."]
-position = Vector2(830, 300)
-scale = Vector2(1.6, 1.6)
-texture = ExtResource("2_crate")
+[node name="Crate" type="RigidBody2D" parent="."]
+position = Vector2(560, 120)
 
-[node name="CrateSmall" type="Sprite2D" parent="."]
-position = Vector2(1000, 300)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_crate")
+[node name="Sprite2D" type="Sprite2D" parent="Crate"]
+texture = ExtResource("3_crate")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+shape = SubResource("RectangleShape2D_crate")
+
+[node name="Crate2" type="RigidBody2D" parent="."]
+position = Vector2(640, 20)
+rotation = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate2"]
+texture = ExtResource("3_crate")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate2"]
+shape = SubResource("RectangleShape2D_crate")
+
+[node name="Crate3" type="RigidBody2D" parent="."]
+position = Vector2(720, 180)
+rotation = -0.35
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate3"]
+texture = ExtResource("3_crate")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate3"]
+shape = SubResource("RectangleShape2D_crate")
