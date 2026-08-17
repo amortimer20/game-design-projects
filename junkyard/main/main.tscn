@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Texture2D" path="res://assets/background.png" id="1_bg"]
 [ext_resource type="Texture2D" path="res://assets/stone-block.png" id="2_stone"]
-[ext_resource type="Texture2D" path="res://crate/crate.png" id="3_crate"]
+[ext_resource type="PackedScene" path="res://crate/crate.tscn" id="3_crate"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 size = Vector2(1280, 80)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crate"]
-size = Vector2(70, 70)
 
 [node name="Main" type="Node2D"]
 
@@ -27,31 +24,50 @@ texture = ExtResource("2_stone")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 shape = SubResource("RectangleShape2D_ground")
 
-[node name="Crate" type="RigidBody2D" parent="."]
-position = Vector2(560, 120)
+[node name="Crate1" parent="." instance=ExtResource("3_crate")]
+position = Vector2(830, 585)
 
-[node name="Sprite2D" type="Sprite2D" parent="Crate"]
-texture = ExtResource("3_crate")
+[node name="Crate2" parent="." instance=ExtResource("3_crate")]
+position = Vector2(902, 585)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
-shape = SubResource("RectangleShape2D_crate")
+[node name="Crate3" parent="." instance=ExtResource("3_crate")]
+position = Vector2(974, 585)
 
-[node name="Crate2" type="RigidBody2D" parent="."]
-position = Vector2(640, 20)
-rotation = 0.2
+[node name="Crate4" parent="." instance=ExtResource("3_crate")]
+position = Vector2(1046, 585)
 
-[node name="Sprite2D" type="Sprite2D" parent="Crate2"]
-texture = ExtResource("3_crate")
+[node name="Crate5" parent="." instance=ExtResource("3_crate")]
+position = Vector2(830, 515)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate2"]
-shape = SubResource("RectangleShape2D_crate")
+[node name="Crate6" parent="." instance=ExtResource("3_crate")]
+position = Vector2(902, 515)
 
-[node name="Crate3" type="RigidBody2D" parent="."]
-position = Vector2(720, 180)
-rotation = -0.35
+[node name="Crate7" parent="." instance=ExtResource("3_crate")]
+position = Vector2(974, 515)
 
-[node name="Sprite2D" type="Sprite2D" parent="Crate3"]
-texture = ExtResource("3_crate")
+[node name="Crate8" parent="." instance=ExtResource("3_crate")]
+position = Vector2(1046, 515)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate3"]
-shape = SubResource("RectangleShape2D_crate")
+[node name="Crate9" parent="." instance=ExtResource("3_crate")]
+position = Vector2(830, 445)
+
+[node name="Crate10" parent="." instance=ExtResource("3_crate")]
+position = Vector2(902, 445)
+
+[node name="Crate11" parent="." instance=ExtResource("3_crate")]
+position = Vector2(974, 445)
+
+[node name="Crate12" parent="." instance=ExtResource("3_crate")]
+position = Vector2(1046, 445)
+
+[node name="Crate13" parent="." instance=ExtResource("3_crate")]
+position = Vector2(830, 375)
+
+[node name="Crate14" parent="." instance=ExtResource("3_crate")]
+position = Vector2(902, 375)
+
+[node name="Crate15" parent="." instance=ExtResource("3_crate")]
+position = Vector2(974, 375)
+
+[node name="Crate16" parent="." instance=ExtResource("3_crate")]
+position = Vector2(1046, 375)
