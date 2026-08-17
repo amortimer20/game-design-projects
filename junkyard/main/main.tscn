@@ -1,9 +1,35 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Texture2D" path="res://crate/crate.png" id="1_crate"]
+[ext_resource type="Texture2D" path="res://assets/background.png" id="1_bg"]
+[ext_resource type="Texture2D" path="res://crate/crate.png" id="2_crate"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Crate" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-texture = ExtResource("1_crate")
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_bg")
+
+[node name="Crate" type="Sprite2D" parent="."]
+position = Vector2(300, 300)
+texture = ExtResource("2_crate")
+
+[node name="CrateTilted" type="Sprite2D" parent="."]
+position = Vector2(470, 300)
+rotation = 0.261799
+texture = ExtResource("2_crate")
+
+[node name="CrateTurned" type="Sprite2D" parent="."]
+position = Vector2(640, 300)
+rotation = 0.785398
+texture = ExtResource("2_crate")
+
+[node name="CrateBig" type="Sprite2D" parent="."]
+position = Vector2(830, 300)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_crate")
+
+[node name="CrateSmall" type="Sprite2D" parent="."]
+position = Vector2(1000, 300)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_crate")
